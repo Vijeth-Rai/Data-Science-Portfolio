@@ -69,15 +69,15 @@ The dataset is provided by [ConocoPhilips](https://www.kaggle.com/competitions/e
 - Many highly correlated features
 
 ### Preprocess
-#### 1. Checking whether missing values are saying something
+1. Checking whether missing values are saying something
 
 Maybe the missing values actually say something valuable regarding the equipment failure. I will check if this is the case by using Hamming distance between features with missing values and the target class. The logic is, if there is any relation with failure and nan values, the hamming distance with be very high. I am removing all features that do not have a significant value of hamming distance in this preprocess stage.
 
-#### 2. Removing highly correlated features
+2. Removing highly correlated features
 
 Removing all features that have corelation greater than 0.85. This will lead to reduction in data dimension and also boosting algorithms will work better.
 
-#### 3. Scaling feature
+3. Scaling feature
 
 Normalizing all the features so that it can be readily used for any model without extra scaling techniques.
 

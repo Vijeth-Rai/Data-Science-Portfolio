@@ -191,6 +191,12 @@ Using these hyperparameters, the model effectively predicted Instagram friend re
 ### Conclusion
 The Instagram Friend Recommendation System successfully suggests potential friends for users to follow, enhancing their experience on the platform. Further improvements can be made by exploring additional features, fine-tuning the model, and incorporating user feedback to refine the recommendations.
 
-## Master's Dissertation
+# Implementation from Scratch
+These are the algorithms that have been implemented from scratch without relying on external libraries such as scikit-learn. This not only showcases a deep understanding of the underlying concepts but also demonstrates strong coding skills and the ability to create custom solutions.
 
-[Provide a brief description of the project here]
+
+# Master's Dissertation
+When words are not enough: Multi-modal context-based sarcasm detection using AI
+
+### PROJECT AIM:
+The future of AI shows promising possibilities in the field of communication such as therapy, retail, customer service, reception desks etc. However, despite the significant progress, there is a lack of research that explores the extent to which AI can be used to distinguish passive aggression or sarcasm. Thus, the aim of this project is to investigate the potential of AI in detecting this subtle human expressiveness by utilizing audio, video and textual data, along with the contextual information leading to the sarcasm

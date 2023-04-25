@@ -190,7 +190,6 @@ These are the algorithms that have been implemented from scratch without relying
 
 
 # Master's Dissertation
-When words are not enough: Multi-modal context-based sarcasm detection using AI
+### When words are not enough: Multi-modal context-based sarcasm detection using AI
 
-### PROJECT AIM:
 The future of AI shows promising possibilities in the field of communication such as therapy, retail, customer service, reception desks etc. However, despite the significant progress, there is a lack of research that explores the extent to which AI can be used to distinguish passive aggression or sarcasm. Thus, the aim of this project is to investigate the potential of AI in detecting this subtle human expressiveness by utilizing audio, video and textual data, along with the contextual information leading to the sarcasm

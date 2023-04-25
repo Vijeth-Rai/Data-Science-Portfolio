@@ -132,6 +132,65 @@ I have used Binary Crossentropy as loss function. It is used here because the in
 A new model can be built called [Hierarchical Multi-Scale Attention for Semantic Segmentation](https://arxiv.org/abs/2005.10821). This model might be able to give even better results than Unet.
 
 
+# Student's Mental Health - Outlier Detection
+### Dataset
+This dataset offers a fascinating insight into gender differences in fear-related personality traits and their correlation with physical strength across five university samples. The dataset includes self-report measures of HEXACO Emotionality to explore the effects of physical strength on fear-related personality traits - which is key information to consider when designing interventions for mental health issues.
+
+### Goal
+Based on the questionnaire and the surverys done by students, I will try to identify any outliers in the data. These outliers would meant that the student would be in a bad mental state and would require mental health support.
+
+### EDA
+- Males have greater grip strength than females
+- Males have greater chest size than females
+- Females have overall greater anxiety scores than males
+- Both genders have around the same level of emotional dependence scores
+- Both genders have around the same level of fearfulness scores
+- Females have greater empathy than males
+
+### Preprocess
+There are too many questionnaires and personality related attributes to make a plot out of. So I am grouping the relevant features together. There are no missing values.
+
+### Model
+TSNE - At low n_iterations, there are some visually noticeable outlier points
+PCA - Using the Local outlier Factor, there is evidence of existance of outliers in the data.
+
+### Conclusion
+Further investigation into the dataset is required to establish conclusive evidence that poor mental health can be accurately detected. While there is potential for significant improvements in this area, it is important to acknowledge that expertise in psychology is necessary for a thorough analysis, which I currently lack.
+
+# Instagram Follow Recommendation System
+### Dataset
+The dataset used for this project contains information about Instagram users and their connections. The data includes user profiles, their followers, and the users they follow. This information is valuable for understanding user preferences and behavior in order to provide tailored friend recommendations.
+
+### Goal
+The goal of this project is to develop a friend recommendation system for Instagram users by leveraging machine learning techniques. By analyzing user networks and connections, the recommendation system aims to suggest potential friends for users to follow, thereby enhancing their experience on the platform.
+
+### Preprocess
+The dataset undergoes several preprocessing steps to make it suitable for machine learning algorithms. The following features are extracted and transformed:
+
+1. **Preferential Attachment**: Computing the preferential attachment for pairs of nodes, considering the number of followers and followees for each user. This feature is a measure of how likely two users are to connect based on their existing connections.
+
+2. **SVD Features**: The code uses precomputed SVD features (svd_u and svd_v vectors) that are derived from the adjacency matrix of the graph. These features capture the latent relationships between users in the network, which can help the model understand the underlying structure of the network.
+
+3. **Dot products of SVD features**: The element-wise dot products of the svd_u and svd_v vectors are calculated to generate new features. These new features can help capture the similarity between users in the network.
+
+After these preprocessing steps, the dataset is ready for training the XGBoost model to make recommendations.
+
+### Model
+The XGBoost Classifier is employed as the primary machine learning model for this project. The model is trained and tested using various hyperparameters to optimize its performance. The model's performance is evaluated using the **F1 score**. A grid search of hyperparameters is performed to find the best combination of max_depth, learning_rate, and n_estimators for the XGBoost model.
+
+After identifying the optimal hyperparameters, the model is trained, and predictions are made for both the train and test sets. Confusion, precision, and recall matrices are plotted to visualize and better understand the model's performance.
+
+### Model Performance
+The XGBoost Classifier achieved a **Maximum Accuracy of 93.50%** on the test set. The optimal hyperparameters for the model were found to be:
+- max_depth: 10
+- learning_rate: 0.01
+- n_estimators: 50
+
+Using these hyperparameters, the model effectively predicted Instagram friend recommendations. The confusion, precision, and recall matrices provided a comprehensive view of the model's performance, allowing us to better understand its strengths and limitations.
+
+### Conclusion
+The Instagram Friend Recommendation System successfully suggests potential friends for users to follow, enhancing their experience on the platform. Further improvements can be made by exploring additional features, fine-tuning the model, and incorporating user feedback to refine the recommendations.
+
 ## Master's Dissertation
 
 [Provide a brief description of the project here]

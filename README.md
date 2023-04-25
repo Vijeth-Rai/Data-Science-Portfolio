@@ -117,8 +117,6 @@ The classes are heavily imbalanced. Also, the size of the dataset is small. Ther
 ### Models
 I have chosen dice coefficient as the performance metric. It is because the result masks needs to have both good precision and a good recall. I have used Binary Crossentropy as loss function. It is used here because the insight of an element belonging to a certain class should not influence the decision for another class because some images might contain more than 1 class.
 
-#### Model Comparison
-
 | Model | Loss | Epochs |
 | --- | --- | --- |
 | Residual Unet | 0.0513 | 15 |

@@ -22,7 +22,8 @@ A collection of my data science projects showcasing my skills in machine learnin
 # Microsoft Malware Detection 
 
 ### About the dataset
-The dataset is taken from https://www.kaggle.com/c/microsoft-malware-prediction. This dataset contains .byte and .asm files which are most commonly used in malware detection tasks. The .byte files contain binary data in hexadecimal format and the .asm files contain the disassembled code of the binary files. There are 10868 .byte and .asm files in the dataset. The task is to classify whether the file classifies as a malware or not.
+The dataset is taken from The dataset is taken from [Microsoft Malware Challenge](https://www.kaggle.com/c/microsoft-malware-prediction). This dataset contains .byte and .asm files which are most commonly used in malware detection tasks.
+. This dataset contains .byte and .asm files which are most commonly used in malware detection tasks. The .byte files contain binary data in hexadecimal format and the .asm files contain the disassembled code of the binary files. There are 10868 .byte and .asm files in the dataset. The task is to classify whether the file classifies as a malware or not.
 
 ### Motivation
 The motivation behind this project lies in the need to protect users from the ever-evolving landscape of cyber threats and ensure the safety and integrity of computer systems. By creating a reliable and efficient malware detection system using machine learning, we can stay one step ahead of cybercriminals and safeguard our digital lives.
@@ -47,7 +48,7 @@ There are 26 and 676 features of .asm uni grams and bi grams respectively. Simil
 One other conclusion that can be drawn from the table is that the model consisting of ASM Bi, ASM Uni, Bytes Bi, and ASM Pixel features achieved a perfect accuracy of 100% on both training and testing data when using the Random Forest model. This suggests that the combination of these features may be particularly effective in distinguishing between malware and benign files. However, it is important to note that the malware detection model might go out of date if it is not regularly trained on latest data.
 
 # Stripper Well Problem
-> For in depth details about this project, check out my blog here https://dev.to/vijethrai/solving-the-stripper-well-problem-15m9
+> For in depth details about this project, check out my [blog](https://dev.to/vijethrai/solving-the-stripper-well-problem-15m9)
 
 ### About Stripper Wells
 A Stripper well is a low yield oil well. These wells have low operational costs and have tax breaks which makes it attractive from a business point of view. Almost 80% of the oil wells in the US are Stripper wells.
@@ -59,7 +60,7 @@ The well has a lot of mechanical components and the breakdown is quite often com
 The goal of the project is to predict whether the mechanical component has failed in the surface level or down-hole level. This information can be used to send the repair team to address the failure in either of the levels and save valuable time.
 
 ### Dataset
-The dataset is provided by ConocoPhilips https://www.kaggle.com/competitions/equipfailstest/data. The dataset has 345 features which are taken from the sensors that collect a variety of information at surface and bottom levels. There are 50084 instances.
+The dataset is provided by [ConocoPhilips](https://www.kaggle.com/competitions/equipfailstest/data). The dataset has 345 features which are taken from the sensors that collect a variety of information at surface and bottom levels. There are 50084 instances.
 
 ### EDA Conclusions
 - The dataset is heavily imbalanced
@@ -82,17 +83,54 @@ Normalizing all the features so that it can be readily used for any model withou
 
 ### Models
 
-| Model | F1 Score | Precision | Recall | Accuracy |
-| --- | --- | --- | --- | --- |
-| Random Forest | 0.89 | 0.90 | 0.70 | 99.995 |
-| XGBoost | 0.92 | 0.84 | 0.84 | 99.996 |
-| AdaBoost | 0.89 | 0.92 | 0.68 | 99.995 |
-| Decision Tree | 0.80 | 0.58 | 0.66 | 99.989 |
-| ANN | 0.78 | 0.58 | 0.85 | 99.990 |
-| Best Ensemble | 0.82 | 0.54 | 0.84 | 99.989 |
+| Model | F1 Score | Precision | Recall | Accuracy | Misclassified points out of 16001 |
+| --- | --- | --- | --- | --- | --- |
+| Random Forest | 0.89 | 0.90 | 0.70 | 99.995 | 77 |
+| XGBoost | 0.92 | 0.84 | 0.84 | 99.996 | 66 |
+| AdaBoost | 0.89 | 0.92 | 0.68 | 99.995 | 75 |
+| Decision Tree | 0.80 | 0.58 | 0.66 | 99.989 | 166 |
+| ANN | 0.78 | 0.58 | 0.85 | 99.990 | 153 |
+| Best Ensemble | 0.82 | 0.54 | 0.84 | 99.989 | 174 |
 
 ### Conclusion
 New features impact the accuracy of the model by around 30%. XGBoost has the best F1 score. 
+
+# Steel Defect Detection
+> For in depth details about this project, check out my [blog](https://dev.to/vijethrai/steel-defect-detection-86i)
+
+### Business Problem
+In manufacturing industries, one of the main problems is detection of faulty production parts. Detected faulty parts are recycled.But in cases where it is not detected, it can lead to dangerous situations for the customer and reputation of the company. The goal of the project is to write algorithm that can localize and classify surface defects on a steel sheet. If successful, it will help keep manufacturing standards for steel high.
+
+### Dataset
+The dataset is provided by one of the leading steel manufacturers in the world, [Servastal](https://www.kaggle.com/c/severstal-steel-defect-detection). Severstal is leading the charge in efficient steel mining and production. The company recently created the country’s largest industrial data lake, with petabytes of data that were previously discarded.
+
+The dataset contains 3 features - ImageId, ClassId and Encoded Pixels.
+
+### EDA
+ClassId consists of four unique classes, which are the 4 types of defects and maybe present individually or simultaneously in an image. There are 7095 observations in the train dataset. There are no missing values. The segment for each defect class are encoded into a single row, even if there are several non-contiguous defect locations on an image. The segments are in the form of encoded pixels.
+- There is imbalance in dataset
+- Few parts have two types of defects at the same time
+
+### Data Augmentation
+The classes are heavily imbalanced. Also, the size of the dataset is small. Therefore, I augmented the images such that it compensates for class imbalance and also increases the amount of training data.
+
+### Models
+#### Performance Metric
+I have chosen dice coefficient as the performance metric. It is because the result masks needs to have both good precision and a good recall.
+
+#### Loss Function
+I have used Binary Crossentropy as loss function. It is used here because the insight of an element belonging to a certain class should not influence the decision for another class because some images might contain more than 1 class.
+
+#### Model Comparison
+
+| Model | Loss | Epochs |
+| --- | --- | --- |
+| Residual Unet | 0.0513 | 15 |
+| Unet | 0.0125 | 23 |
+
+### Conclusion
+A new model can be built called [Hierarchical Multi-Scale Attention for Semantic Segmentation](https://arxiv.org/abs/2005.10821). This model might be able to give even better results than Unet.
+
 
 ## Master's Dissertation
 

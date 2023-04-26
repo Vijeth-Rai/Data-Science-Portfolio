@@ -17,7 +17,8 @@ A collection of my data science projects showcasing my skills in machine learnin
     - KMeans Clustering
     - BERT
     - Seq2Seq
-7. Master's Dissertation
+7. SQL work
+8. Master's Dissertation
 
 # Microsoft Malware Detection 
 

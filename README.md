@@ -202,7 +202,3 @@ Valorant games were played and recorded using FBX Game Recorder. The saved recor
 
 
 [![Watch the video](https://img.youtube.com/vi/j-vc4zn2U1Y/hqdefault.jpg)](https://www.youtube.com/embed/j-vc4zn2U1Y)
-
-[<img src="https://img.youtube.com/vi/j-vc4zn2U1Y/hqdefault.jpg" width="600" height="300"
-/>](https://www.youtube.com/embed/j-vc4zn2U1Y)
-

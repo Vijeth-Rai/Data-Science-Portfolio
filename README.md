@@ -19,6 +19,7 @@ A collection of some of my data science projects showcasing my skills in machine
     - Seq2Seq
 7. SQL work
 8. Master's Dissertation
+9. Valorant - EnemyHead Detection
 
 # Microsoft Malware Detection 
 
@@ -194,3 +195,9 @@ These are the algorithms that have been implemented from scratch without relying
 ### When words are not enough: Multi-modal context-based sarcasm detection using AI
 
 The future of AI shows promising possibilities in the field of communication such as therapy, retail, customer service, reception desks etc. However, despite the significant progress, there is a lack of research that explores the extent to which AI can be used to distinguish passive aggression or sarcasm. Thus, the aim of this project is to investigate the potential of AI in detecting this subtle human expressiveness by utilizing audio, video and textual data, along with the contextual information leading to the sarcasm
+
+# Valorant EnemyHead Detection
+Valorant games were played and recorded using FBX Game Recorder. The saved recordings were exported in .mp4 format. Using the VLC media player, screenshots of the required images were taken. The screenshots were then labelled using the labelImg.py which is commonly used to annotate images. The annotations were saved in the format as required for Yolo. Object detection model Yolov8n and Yolov8s were trained on the custom dataset. The datasets and parameters of this model are not made public to prevent malicious use. Pruning and Quantization was applied on the final weights of the model inorder to boost the fps, resulting from boost of 12-19fps to 74-80fps. The result of the Yolov8n is as below.
+
+
+[<img src="https://img.youtube.com/vi/j-vc4zn2U1Y/maxresdefault.jpg" width="50%">](https://youtu.be/j-vc4zn2U1Y)

@@ -20,9 +20,9 @@ A collection of some of my data science projects showcasing my skills in machine
 7. SQL work
 8. Master's Dissertation
 9. Valorant - EnemyHead Detection
-10. Search Engine
+10. Movie Search Engine
 
-# Microsoft Malware Detection 
+# 1. Microsoft Malware Detection 
 
 ### About the dataset
 The dataset is taken from The dataset is taken from [Microsoft Malware Challenge](https://www.kaggle.com/c/microsoft-malware-prediction). This dataset contains .byte and .asm files which are most commonly used in malware detection tasks.
@@ -50,7 +50,7 @@ There are 26 and 676 features of .asm uni grams and bi grams respectively. Simil
 ### Conclusion
 One other conclusion that can be drawn from the table is that the model consisting of ASM Bi, ASM Uni, Bytes Bi, and ASM Pixel features achieved a perfect accuracy of 100% on both training and testing data when using the Random Forest model. This suggests that the combination of these features may be particularly effective in distinguishing between malware and benign files. However, it is important to note that the malware detection model might go out of date if it is not regularly trained on latest data.
 
-# Stripper Well Problem
+# 2. Stripper Well Problem
 > For in depth details about this project, check out my [blog](https://dev.to/vijethrai/solving-the-stripper-well-problem-15m9)
 
 ### About Stripper Wells
@@ -98,7 +98,7 @@ Normalizing all the features so that it can be readily used for any model withou
 ### Conclusion
 New features impact the accuracy of the model by around 30%. XGBoost has the best F1 score. 
 
-# Steel Defect Detection
+# 3. Steel Defect Detection
 > For in depth details about this project, check out my [blog](https://dev.to/vijethrai/steel-defect-detection-86i)
 
 ### Business Problem
@@ -129,7 +129,7 @@ I have chosen dice coefficient as the performance metric. It is because the resu
 A new model can be built called [Hierarchical Multi-Scale Attention for Semantic Segmentation](https://arxiv.org/abs/2005.10821). This model might be able to give even better results than Unet.
 
 
-# Student's Mental Health - Outlier Detection
+# 4. Student's Mental Health - Outlier Detection
 ### Dataset
 This dataset offers a fascinating insight into gender differences in fear-related personality traits and their correlation with physical strength across five university samples. The dataset includes self-report measures of HEXACO Emotionality to explore the effects of physical strength on fear-related personality traits - which is key information to consider when designing interventions for mental health issues.
 
@@ -154,7 +154,7 @@ PCA - Using the Local outlier Factor, there is evidence of existance of outliers
 ### Conclusion
 Further investigation into the dataset is required to establish conclusive evidence that poor mental health can be accurately detected. While there is potential for significant improvements in this area, it is important to acknowledge that expertise in psychology is necessary for a thorough analysis, which I currently lack.
 
-# Instagram Follow Recommendation System
+# 5. Instagram Follow Recommendation System
 ### Dataset
 The dataset used for this project contains information about Instagram users and their connections. The data includes user profiles, their followers, and the users they follow. This information is valuable for understanding user preferences and behavior in order to provide tailored friend recommendations.
 
@@ -188,23 +188,23 @@ Using these hyperparameters, the model effectively predicted Instagram friend re
 ### Conclusion
 The Instagram Friend Recommendation System successfully suggests potential friends for users to follow, enhancing their experience on the platform. Further improvements can be made by exploring additional features, fine-tuning the model, and incorporating user feedback to refine the recommendations.
 
-# Implementation from Scratch
+# 6. Implementation from Scratch
 These are the algorithms that have been implemented from scratch without relying on external libraries such as scikit-learn. This not only showcases a deep understanding of the underlying concepts but also demonstrates strong coding skills and the ability to create custom solutions.
 
 
-# Master's Dissertation
+# 8. Master's Dissertation
 ### When words are not enough: Multi-modal context-based sarcasm detection using AI
 
 The future of AI shows promising possibilities in the field of communication such as therapy, retail, customer service, reception desks etc. However, despite the significant progress, there is a lack of research that explores the extent to which AI can be used to distinguish passive aggression or sarcasm. Thus, the aim of this project is to investigate the potential of AI in detecting this subtle human expressiveness by utilizing audio, video and textual data, along with the contextual information leading to the sarcasm
 
-# Valorant EnemyHead Detection
+# 9. Valorant EnemyHead Detection
 Valorant games were played and recorded using FBX Game Recorder. The saved recordings were exported in .mp4 format. Using the VLC media player, screenshots of the required images were taken. The screenshots were then labelled using the labelImg.py which is commonly used to annotate images. The annotations were saved in the format as required for Yolo. Object detection model Yolov8n and Yolov8s were trained on the custom dataset. The datasets and parameters of this model are not made public to prevent malicious use. Pruning and Quantization was applied on the final weights of the model inorder to boost the fps, resulting from boost of 12-19fps to 74-80fps. The result of the Yolov8n is as below.
 ## Click to watch the video
 
 [![Watch the video](https://img.youtube.com/vi/j-vc4zn2U1Y/hqdefault.jpg)](https://www.youtube.com/embed/j-vc4zn2U1Y)
 
 
-# Movies Search Engine
+# 10. Movies Search Engine
 ### Okapi + BM25
 
 ### Dataset

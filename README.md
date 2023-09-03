@@ -21,6 +21,7 @@ A collection of some of my data science projects showcasing my skills in machine
 8. Master's Dissertation
 9. Valorant - EnemyHead Detection
 10. Movie Search Engine
+11. London Sounds
 
 # 1. Microsoft Malware Detection 
 
@@ -205,7 +206,6 @@ Valorant games were played and recorded using FBX Game Recorder. The saved recor
 
 
 # 10. Movies Search Engine
-### Okapi + BM25
 
 ### Dataset
 The dataset used for this project consists of movie metadata such as titles, genres, ratings, and reviews. It also includes user information like viewing history and preferences. This comprehensive dataset is essential for providing accurate and personalized movie recommendations to users.
@@ -225,3 +225,45 @@ For this project, the Okapi BM25 algorithm serves as the primary model for the r
 
 Conclusion
 This Movie Search Engine project successfully demonstrated how to implement and understand the Okapi BM25 algorithm for search engines. Through this project, significant insights were gained into the working of search algorithms and how to apply them to real-world datasets. Future work could involve implementing additional features like user reviews and ratings to further enhance search results.
+
+# 11. London Sounds
+### Dataset
+This notebook is classification of a sounds dataset called MLEnd sound dataset. This dataset consists of 2500 samples with of on average, 8 seconds long audio data captured around different areas of London. The problem formulation for this advanced mini-project is to predict whether the given sound is taken from which area of London
+
+### Pipelines
+A. Preprocess pipeline:
+This pipeline takes path-to-audio files and path-to-csv file as input. The output will be preprocessed dataframe created from these files.
+
+Intermediate stages:
+Stage 1: Loading audio-files-path as list, and dataframe using csv.
+
+Stage 2: Two specific audio files are corrupted so removing these files from input data
+
+Stage 3: Data augmentation: Since the available data is only 2500 files, I will use augmentation techniques to create more data, 2500x8=20000 data. After augmentation, each audio will be loaded as mel frequency cepstrum coefficients (mfcc). Now these mfcc's will be averaged and made into an array. Transform the mfcc array into appriopriate shape. Merge class labels with the array and output the extracted data. The data output shape should be 2498x8=19984 rows and 2 columns. Make note that the first column has a 20 dimensional array of mfcc of the audio data.
+
+Stage 4: Transform the mfcc array into appriopriate shape. Merge class labels with the array and output the extracted data. The data output shape should be 2498x4=9992 rows and 2 columns. Make note that the first column has a 20 dimensional array of mfcc of the audio data.
+
+
+B. Modelling pipeline
+The ML model I will be using is a basic Deep Neural Network. I want to use this model beacause I am more interested in deep learning rather than classical machine learning. This is the reason I have augmented the data to create more data too. Also, mfcc audio data works extremely well on neural networks. The model is a sequential network. There are a total of 10 hidden layers. I will briefly explain below:
+
+
+The first layer is input layer. Last layer is the output layer. All the layers in between are hidden layers. The first hidden layer flattens in input, next layer normalizes the batches. Now the layers are dense and dropouts layer 12 consecutive times. Each dense layer has relu as activation, except the output layer, where I have used softmax.
+
+Adam is the optimizer with learning rate 0.002. Loss used is categorical_crossentropy. Metrics is AUC.
+
+Early stopping is used if there is no improvement in validation accuracy across 30 conintuous steps. Learning rate is reduced if there is no improvement in validation accuracy for 3 steps. Minimum learning rate is set at 0.00001
+
+
+The model is set to run for 500 epochs, however, it is allowed to stop early.
+C. Visualization pipeline
+  In this pipeline, I will plot the performance of the model. The inputs will be model-history from the previous pipeline
+
+D. Prediction pipeline:
+  In this pipeline, I will give audio file as input, and it will predict whether the sound is from indoor or outdoor.
+
+### Methodology
+The performance metrics used in the model is auc. Since it is multi classification task, auc is a good enough metric. Categorical crossentropy loss is calculated at end of each epoch. This is appropriate because the multi classification of categorical variable. Confusion matrix is plotted in the visualization part for test result. Also, train&validation auc plots is also plotted. train&validation loss is also plotted to show there is no overfit of DNN model.
+
+### Conclusion:
+Achieved an exceptional 99.99% AUC on unseen data. The model accurately pinpoints the origin of sound within London.

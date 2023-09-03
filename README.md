@@ -231,10 +231,11 @@ This Movie Search Engine project successfully demonstrated how to implement and 
 This notebook is classification of a sounds dataset called MLEnd sound dataset. This dataset consists of 2500 samples with of on average, 8 seconds long audio data captured around different areas of London. The problem formulation for this advanced mini-project is to predict whether the given sound is taken from which area of London
 
 ### Pipelines
-A. Preprocess pipeline:
+#### A. Preprocess pipeline:
 This pipeline takes path-to-audio files and path-to-csv file as input. The output will be preprocessed dataframe created from these files.
 
 Intermediate stages:
+
 Stage 1: Loading audio-files-path as list, and dataframe using csv.
 
 Stage 2: Two specific audio files are corrupted so removing these files from input data
@@ -244,7 +245,7 @@ Stage 3: Data augmentation: Since the available data is only 2500 files, I will 
 Stage 4: Transform the mfcc array into appriopriate shape. Merge class labels with the array and output the extracted data. The data output shape should be 2498x4=9992 rows and 2 columns. Make note that the first column has a 20 dimensional array of mfcc of the audio data.
 
 
-B. Modelling pipeline
+#### B. Modelling pipeline
 The ML model I will be using is a basic Deep Neural Network. I want to use this model beacause I am more interested in deep learning rather than classical machine learning. This is the reason I have augmented the data to create more data too. Also, mfcc audio data works extremely well on neural networks. The model is a sequential network. There are a total of 10 hidden layers. I will briefly explain below:
 
 
@@ -256,10 +257,10 @@ Early stopping is used if there is no improvement in validation accuracy across 
 
 
 The model is set to run for 500 epochs, however, it is allowed to stop early.
-C. Visualization pipeline
+#### C. Visualization pipeline
   In this pipeline, I will plot the performance of the model. The inputs will be model-history from the previous pipeline
 
-D. Prediction pipeline:
+#### D. Prediction pipeline:
   In this pipeline, I will give audio file as input, and it will predict whether the sound is from indoor or outdoor.
 
 ### Methodology

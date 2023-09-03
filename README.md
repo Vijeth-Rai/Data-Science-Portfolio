@@ -255,7 +255,6 @@ Adam is the optimizer with learning rate 0.002. Loss used is categorical_crossen
 
 Early stopping is used if there is no improvement in validation accuracy across 30 conintuous steps. Learning rate is reduced if there is no improvement in validation accuracy for 3 steps. Minimum learning rate is set at 0.00001
 
-
 The model is set to run for 500 epochs, however, it is allowed to stop early.
 #### C. Visualization pipeline
   In this pipeline, I will plot the performance of the model. The inputs will be model-history from the previous pipeline

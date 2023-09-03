@@ -20,6 +20,7 @@ A collection of some of my data science projects showcasing my skills in machine
 7. SQL work
 8. Master's Dissertation
 9. Valorant - EnemyHead Detection
+10. Search Engine
 
 # Microsoft Malware Detection 
 
@@ -201,3 +202,26 @@ Valorant games were played and recorded using FBX Game Recorder. The saved recor
 ## Click to watch the video
 
 [![Watch the video](https://img.youtube.com/vi/j-vc4zn2U1Y/hqdefault.jpg)](https://www.youtube.com/embed/j-vc4zn2U1Y)
+
+
+# Movies Search Engine
+### Okapi + BM25
+
+### Dataset
+The dataset used for this project consists of movie metadata such as titles, genres, ratings, and reviews. It also includes user information like viewing history and preferences. This comprehensive dataset is essential for providing accurate and personalized movie recommendations to users.
+
+### Goal
+The objective of this project is to develop a search engine that can recommend movies to users based on their description of the movie they want to watch. Utilizing machine learning algorithms and natural language processing techniques, the system aims to provide highly relevant movie suggestions to enhance user satisfaction and engagement.
+
+### Preprocess
+Before feeding the data into machine learning algorithms, several preprocessing steps are taken to prepare the dataset:
+Text Normalization: Titles and reviews are converted to lowercase, punctuation is removed, and stemming is applied to reduce the words to their root form.
+Feature Extraction: Term Frequency-Inverse Document Frequency (TF-IDF) is used to represent movie descriptions and reviews in vectorized form.
+User Profiling: User preferences and viewing history are analyzed to create a feature vector representing each user's tastes in movies.
+After completing these preprocessing steps, the dataset is ready for training using a content-based filtering model.
+
+### Model
+For this project, the Okapi BM25 algorithm serves as the primary model for the recommendation system. Okapi BM25 is particularly useful for ranking and information retrieval tasks. The algorithm takes into account the frequency of terms in each document and the inverse document frequency across the corpus, along with additional length normalization, to provide a relevance score for each movie in relation to the user query or profile.
+
+Conclusion
+This Movie Search Engine project successfully demonstrated how to implement and understand the Okapi BM25 algorithm for search engines. Through this project, significant insights were gained into the working of search algorithms and how to apply them to real-world datasets. Future work could involve implementing additional features like user reviews and ratings to further enhance search results.

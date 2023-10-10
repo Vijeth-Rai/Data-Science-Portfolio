@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+  	.center-align {
+    	text-align: center;
+  	}
+    </style>
+    <title>Bank Transaction Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-row label,
+        .form-row select {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        select {
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bank Transaction Form</h1>
+        <form action="/predict" method="post">
+            <div class="form-row">
+                <label for="sourceid">Source ID:</label>
+                <input type="number" id="sourceid" name="sourceid" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="destinationid">Destination ID:</label>
+                <input type="number" id="destinationid" name="destinationid" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="amountofmoney">Amount of Money:</label>
+                <input type="number" id="amountofmoney" name="amountofmoney" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="typeofaction">Type of Transaction:</label>
+                <select id="typeofaction" name="typeofaction" required>
+                    <option value="cash-in">Cash-in</option>
+                    <option value="transfer">Transfer</option>
+                </select>
+            </div>
+            <div align="center">
+  		<input type="submit" value="Predict">
+	    </div>
+        </form>
+	<h2 id="prediction-text" align='center'>{{prediction_text}}</h2>
+   <script>
+        // Check prediction text and apply the appropriate class
+        window.onload = function () {
+            var predictionElement = document.getElementById("prediction-text");
+            var text = predictionElement.textContent || predictionElement.innerText; 
+
+            if (text.trim() === "Fraud") {
+                predictionElement.className = "red-text";
+            } else if (text.trim() === "Not Fraud") {
+                predictionElement.className = "green-text";
+            }
+        }
+    </script>
+</body>
+</html>
